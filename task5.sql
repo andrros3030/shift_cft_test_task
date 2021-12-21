@@ -2,7 +2,7 @@ SELECT
 prod_type.NAME name,
 (SELECT
     (SELECT
-        SUM(SUM)/COUNT(sum) --TODO: добавить обработку отрицательных сумм
+        SUM(power(-1, _rec.dt) * SUM)/COUNT(sum) -- если DT = 0 мы добавляем значение со знаком плюс, иначе мы берём отрицательное значение, чтобы среднее движение по счёту
         FROM RECORDS _rec
         WHERE _rec.ACC_REF = _acc.ID -- фильтрация по счёту
         and _rec.oper_date = '01.10.2015' -- произвольная дата
