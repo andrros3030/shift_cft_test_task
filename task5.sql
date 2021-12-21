@@ -5,7 +5,7 @@ prod_type.NAME name,
         SUM(power(-1, _rec.dt) * SUM)/COUNT(sum) -- если DT = 0 мы добавляем значение со знаком плюс, иначе мы берём отрицательное значение, чтобы среднее движение по счёту
         FROM RECORDS _rec
         WHERE _rec.ACC_REF = _acc.ID -- фильтрация по счёту
-        and _rec.oper_date = '01.10.2015' -- произвольная дата
+        and _rec.oper_date = '2015-10-01' -- произвольная дата
     )
     FROM PRODUCTS _prod
     JOIN ACCOUNTS _acc on _prod.ID = _acc.PRODUCT_REF -- связка продукта и счёта

@@ -15,5 +15,5 @@ JOIN PRODUCT_TYPE _prod_type on _prod.PRODUCT_TYPE_ID = _prod_type.ID
 JOIN CLIENTS _clnt ON _acc.CLIENT_REF = _clnt.ID
 WHERE _prod_type.NAME = "КРЕДИТ" -- выбираем продукты с типом "кредит"
 and _clnt.ID = clnt.ID -- берём данные по клиенту из текущей выборки
-and (_prod.CLOSE_DATE is NULL or _prod.CLOSE_DATE > date('now')) -- проверяем, вдруг кредитный продукт закрыт
+and (_prod.CLOSE_DATE is NULL or _prod.CLOSE_DATE < date('now')) -- проверяем, вдруг кредитный продукт закрыт
 ) = 0; -- если количество = 0 добавляем в отчёт, иначе счёт не подходит по условию
