@@ -1,0 +1,11 @@
+UPDATE PRODUCT_TYPE
+SET END_DATE = datetime('now')
+WHERE
+(SELECT
+    count(rec.id)
+FROM RECORDS rec
+JOIN ACCOUNTS acc on rec.ACC_REF = acc.ID
+JOIN PRODUCTS prod on acc.PRODUCT_REF = prod.ID
+WHERE prod.PRODUCT_TYPE_ID = PRODUCT_TYPE.ID
+AND rec.OPER_DATE BETWEEN DATETIME('now', '-1 month') AND DATETIME('now')
+) = 0
