@@ -20,6 +20,7 @@ insert into RECORDS(ID, DT, SUM, ACC_REF, OPER_DATE) values (801, 1, 5000, 888, 
 insert into RECORDS(ID, DT, SUM, ACC_REF, OPER_DATE) values (802, 0, 500, 888, '2021-12-10');
 insert into RECORDS(ID, DT, SUM, ACC_REF, OPER_DATE) values (803, 0, 4500, 888, '2021-12-10');
 insert into RECORDS(ID, DT, SUM, ACC_REF, OPER_DATE) values (804, 1, 200, 888, '2021-12-11'); -- повторное кредитование, пользователь добавляется в выборку
+-- for task 8 and 9:
 insert into PRODUCTS(ID, PRODUCT_TYPE_ID, NAME, CLIENT_REF, OPEN_DATE, CLOSE_DATE) values (224, 1, 'Кредитный договор с Петров С.И.', 3, '2017-08-01', null);
 insert into ACCOUNTS(ID, NAME, SALDO, CLIENT_REF, OPEN_DATE, CLOSE_DATE, PRODUCT_REF, ACC_NUM) values (889, 'Кредитный счет для Петрова С.И.', 0, 3,'2017-08-01', null, 224, '12233222');
 insert into RECORDS(ID, DT, SUM, ACC_REF, OPER_DATE) values (805, 1, 5000, 889, '2021-12-10'); -- первая кредитная операция
